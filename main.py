@@ -66,3 +66,5 @@ b = chlopcy.groupby(['Imie']).agg({'Liczba':['sum']})
 sortch=b.sort_values(by=('Liczba','sum'), ascending=False)
 
 print(sortch.iloc[0])
+
+####
