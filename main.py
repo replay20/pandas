@@ -54,6 +54,15 @@ for rok in range(2000,2018,1):
 
 #najbardziej popularne imię dziewczynki i chłopca w całym danym okresie,
 
-sortd=dziewczynki.sort_values(by='Liczba', ascending=False)
-popd=sortd.iloc[0]
-print(popd)
+
+a = dziewczynki.groupby(['Imie']).agg({'Liczba':['sum']})
+
+sortdz=a.sort_values(by=('Liczba','sum'), ascending=False)
+
+print(sortdz.iloc[0])
+
+b = chlopcy.groupby(['Imie']).agg({'Liczba':['sum']})
+
+sortch=b.sort_values(by=('Liczba','sum'), ascending=False)
+
+print(sortch.iloc[0])
